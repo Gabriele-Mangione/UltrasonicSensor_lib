@@ -7,7 +7,8 @@
 class UltrasonicSensor{
     public:
     UltrasonicSensor(uint8_t TriggerPin, uint8_t EchoPin);
-    byte getSensorDistance();
+    uint8_t getSensorDistance();
+    void begin();
 
     uint8_t triggerPin = 0;
     uint8_t echoPin = 0;

@@ -6,7 +6,12 @@ UltrasonicSensor::UltrasonicSensor(uint8_t TriggerPin, uint8_t EchoPin){
     echoPin = EchoPin;
 }
 
-byte UltrasonicSensor::getSensorDistance() {
+void UltrasonicSensor::begin(){
+  pinMode(echoPin, INPUT);
+  pinMode(triggerPin, OUTPUT);
+}
+
+uint8_t UltrasonicSensor::getSensorDistance() {
   digitalWrite(triggerPin, LOW);                 // Clears the trigPin condition
   delayMicroseconds(2);
   digitalWrite(triggerPin, HIGH);
